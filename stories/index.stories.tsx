@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import AppBar from '../src/compoments/AppBar';
 // import Button from '@material-ui/core/Button'
 
-storiesOf('AppBar', module).add('no prop', () => <AppBar />);
+storiesOf('AppBar', module).add('with title', () => <AppBar title='myTitle' />);
 // storiesOf('Button', module).add('with text', () => <Button variant='outlined'> Hello </Button>);
 
 // import { Button, Welcome } from '@storybook/react/demo';

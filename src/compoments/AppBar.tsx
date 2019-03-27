@@ -21,10 +21,12 @@ const styles = createStyles({
     },
 });
 
-export interface Props extends WithStyles<typeof styles> { }
+export interface Props extends WithStyles<typeof styles> {
+    title: string
+}
 
 function ButtonAppBar(props: Props) {
-    const { classes } = props;
+    const { classes, title } = props;
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -33,9 +35,8 @@ function ButtonAppBar(props: Props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" color="inherit" className={classes.grow}>
-                        News
-          </Typography>
-                    <Button color="inherit">Login</Button>
+                        {title}
+                    </Typography>
                 </Toolbar>
             </AppBar>
         </div>
