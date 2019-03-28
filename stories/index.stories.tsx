@@ -3,10 +3,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import AppBar from '../src/compoments/AppBar';
+import BlogBar from '../src/compoments/BlogBar';
+import BlogDrawer from '../src/compoments/BlogDrawer'
 // import Button from '@material-ui/core/Button'
 
-storiesOf('AppBar', module).add('with title', () => <AppBar title='myTitle' />);
+storiesOf('BlogBar', module).add('with title', () => <BlogBar title='myTitle' />);
+storiesOf('BlogDrawer', module).add("open", () => <BlogDrawer open='true' />)
 // storiesOf('Button', module).add('with text', () => <Button variant='outlined'> Hello </Button>);
 
 // import { Button, Welcome } from '@storybook/react/demo';
@@ -22,3 +24,4 @@ storiesOf('AppBar', module).add('with title', () => <AppBar title='myTitle' />);
 //       </span>
 //     </Button>
 //   ));
+
