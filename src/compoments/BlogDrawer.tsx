@@ -1,11 +1,11 @@
-mport React, { ReactEventHandler } from 'react';
+import React, { ReactEventHandler } from 'react';
 import PropTypes from 'prop-types';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -33,25 +33,25 @@ const styles = (theme: Theme) =>
     });
 
 export interface Props extends WithStyles<typeof styles> {
-    open: boolean
-    handleDrawerClose: ReactEventHandler
+    drawerIsOpen: boolean;
+    handleDrawerClose: ReactEventHandler;
 }
 
 function BlogDrawer(props: Props) {
-    const { classes, open, handleDrawerClose } = props;
+    const { classes, drawerIsOpen, handleDrawerClose } = props;
     return (
         <Drawer
             className={classes.drawer}
             variant="persistent"
             anchor="left"
-            open={open}
+            open={drawerIsOpen}
             classes={{
                 paper: classes.drawerPaper,
             }}
         >
             <div className={classes.drawerHeader}>
                 <IconButton onClick={handleDrawerClose}>
-                    <ChevronRightIcon />
+                    <ChevronLeftIcon />
                 </IconButton>
             </div>
             <Divider />
@@ -82,3 +82,4 @@ BlogDrawer.propTypes = {
 } as any;
 
 export default withStyles(styles, { withTheme: true })(BlogDrawer);
+
